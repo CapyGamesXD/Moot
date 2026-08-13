@@ -9,7 +9,7 @@
 		[{ number: 7 }, { number: 8 }, { number: 9 }]
 	]);
 	let volatileDisplayBooleanHeyWaitThisCanBeMyEasterEggVariableForThisProject = false;
-	let page = 1;
+	let page = $state(1);
 	async function calculate() {
 		const toPredict = displayText
 			.split('+')
@@ -76,7 +76,7 @@
 			guess the correct answer. <br /> <br /> What are the benefits of this method? <br /> It's funnier,
 			I guess!
 		</p>
-		<button style="margin-top: 20px;" class="okButton" onclick={() => (page += 1)}>Okay!</button>
+		<button style="margin-top: 20px;" class="okButton" onclick={() => (page = 2)}>Okay!</button>
 	{:else if page === 2}
 		<div class="calculator">
 			<div style="margin-bottom: 10px;" class="screen">
