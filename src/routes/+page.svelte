@@ -62,7 +62,7 @@
 				displayText = 'Thinking really hard... This is a hard one...';
 				volatileDisplayBooleanHeyWaitThisCanBeMyEasterEggVariableForThisProject = true;
 				setTimeout(() => {
-					displayText = (toPredict[0] * 100).toString();
+					displayText = Math.floor((toPredict[0] * 100).toString());
 				}, 2500);
 			}
 		}
