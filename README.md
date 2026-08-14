@@ -11,6 +11,8 @@ SvelteKit frontend, JS backend (+server.js from SvelteKit) running BrainJS on th
 Training data:
 I made my own library of training data by randomly generating calculations. :)
 
+It uses Brain.JS's built-in "leaky-relu" activation function. You can find more info at the /src/routes/train/+server.js page. :D
+
 ## AI usage:
 
 No AI code was used.

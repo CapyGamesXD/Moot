@@ -15,10 +15,49 @@
 	}
 </script>
 
-{#each dataset as dataItem}
-	<p>{JSON.stringify(dataItem)}</p>
-{/each}
-<button onclick={() => generate(inputCount)}>Generate data</button>
-<input bind:value={inputCount} placeholder="Count" />
+<div class="centerDiv">
+	{#if copySet.length >= 1}
+		<button style="margin-bottom: 10px;" onclick={() => navigator.clipboard.writeText(copySet)}
+			>Copy</button
+		>
+	{/if}
+	<button style="margin-bottom: 10px;" onclick={() => generate(inputCount)}
+		>Generate (and push) data</button
+	>
+	<input bind:value={inputCount} placeholder="Count" />
+	{#each dataset as dataItem}
+		<p>{JSON.stringify(dataItem)}</p>
+	{/each}
+</div>
 
-<button onclick={() => navigator.clipboard.writeText(copySet)}>Copy</button>
+<style>
+	button {
+		width: 300px;
+		height: 40px;
+		background-color: rgb(177, 178, 178);
+		border-radius: 20px;
+
+		color: white;
+	}
+	input {
+		width: 300px;
+		height: 40px;
+		background-color: rgb(39, 38, 38);
+		border-radius: 20px;
+		padding: 10px;
+		color: white;
+	}
+	.centerDiv {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: auto;
+		padding: 40px;
+		min-height: 100vh;
+		flex-direction: column;
+		background: #f29590;
+		background: #f29590;
+		background: #f29590;
+		background: linear-gradient(90deg, rgba(242, 149, 144, 1) 0%, rgba(0, 118, 222, 1) 100%);
+	}
+</style>
