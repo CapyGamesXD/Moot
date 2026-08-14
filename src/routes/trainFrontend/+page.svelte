@@ -1,6 +1,9 @@
 <script>
 	//@ts-nocheck
 	let status = $state('');
+
+	import { onMount } from 'svelte';
+
 	async function trainNet() {
 		try {
 			const response = await fetch('/api/train', {
@@ -15,8 +18,7 @@
 
 			const reply = await response.json();
 			if (reply.success === false) {
-				alert('Training failed. Check data.');
-				status = 'Training failed.';
+				status = reply.reason || 'Something went wrong.';
 			}
 		} catch (e) {
 			console.log(e);
